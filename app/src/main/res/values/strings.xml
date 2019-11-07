@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Reposita</string>
+    <string name="submit">Submit</string>
+    <string name="username_hnt">Type Username...</string>
+    <string name="back">Back</string>
+    <string name="error_occurred">Got Error</string>
+    <string name="empty_list">No Data</string>
+    <string name="dummy_username">John Doe</string>
+    <string name="dummy_reponame">Repository Name</string>
+    <string name="dummy_description">This is description</string>
+    <string name="dummy_starCount">00</string>
 </resources>
