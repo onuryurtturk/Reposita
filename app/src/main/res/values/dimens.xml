@@ -4,7 +4,9 @@
     <dimen name="btn_text_size">14sp</dimen>
     <dimen name="ic_drawable_left_padding">10dp</dimen>
     <dimen name="username_text_size">20sp</dimen>
-    <dimen name="repositoryname_text_size">18sp</dimen>
+    <dimen name="repositoryname_text_size">16sp</dimen>
     <dimen name="descriptiontext_size">12sp</dimen>
-
+    <dimen name="info_numbers_size">15sp</dimen>
+    <dimen name="recyclerView_bottom_padding">15dp</dimen>
+    <dimen name="avatar_detail_size">120dp</dimen>
 </resources>
