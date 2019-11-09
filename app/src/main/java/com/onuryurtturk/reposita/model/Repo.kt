@@ -19,6 +19,7 @@ data class Repo(
     @field:SerializedName("open_issues_count") val open_issues_count: Int,
     @field:SerializedName("forks") val forks: Int,
     @field:SerializedName("open_issues") val open_issues: Int,
-    @field:SerializedName("watchers") val watchers: Int)  : Serializable {
+    @field:SerializedName("watchers") val watchers: Int,
+    var faved:Boolean)  : Serializable {
 
 }
