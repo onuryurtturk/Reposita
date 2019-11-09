@@ -9,11 +9,11 @@
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:name=".view.RepositaApplication"
+            android:name=".RepositaApplication"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".view.SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.ReposActivity"></activity>
+        <activity android:name=".view.ReposActivity"
+        android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name=".view.RepoDetailActivity"></activity>
     </application>
 
