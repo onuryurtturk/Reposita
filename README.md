@@ -1,4 +1,4 @@
-# Reposita - Github Api Usage Sample
+# Reposita - Github Api Sample
 
 Type Github username and submit to list selected user's Github repositories. Listing formats can be changed whatever you want to show about the repository. This app is a simple demonstration. Github API serving more fields than used in this app. 
 
