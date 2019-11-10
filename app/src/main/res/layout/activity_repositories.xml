@@ -46,40 +46,51 @@
                  tools:visibility="visible"/>
 
 
-        <EditText
-                android:id="@+id/edt_username"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_username"
-                android:drawablePadding="@dimen/ic_drawable_left_padding"
-                android:ems="10"
-                android:text="@={viewModel.username}"
-                android:hint="@string/username_hnt"
-                android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="24dp"
-                app:layout_constraintTop_toTopOf="@+id/layoutEmpty"/>
 
-        <Button
-                android:text="@string/submit"
-                android:layout_width="111dp"
-                android:textColor="@android:color/white"
-                android:textAllCaps="false"
-                android:textSize="@dimen/btn_text_size"
-                android:background="@drawable/btn_background"
-                android:layout_height="43dp"
-                android:onClick="@{() -> viewModel.onSubmitClick()}"
-                android:id="@+id/button" app:layout_constraintStart_toEndOf="@+id/edt_username"
-                android:layout_marginStart="16dp" android:layout_marginTop="24dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:id="@+id/search_layout"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="8dp"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="24dp"
+                      app:layout_constraintTop_toTopOf="@+id/layoutEmpty"
+                      android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_username"
+                    android:drawablePadding="@dimen/ic_drawable_left_padding"
+                    android:ems="10"
+                    android:layout_marginEnd="@dimen/ic_drawable_left_padding"
+                    android:text="@={viewModel.username}"
+                    android:hint="@string/username_hnt"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"/>
+
+            <Button
+                    android:text="@string/submit"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.7"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/btn_text_size"
+                    android:background="@drawable/btn_background"
+                    android:layout_height="43dp"
+                    android:layout_marginEnd="@dimen/ic_drawable_left_padding"
+                    android:onClick="@{() -> viewModel.onSubmitClick()}"
+                    android:id="@+id/button"/>
+
+
+        </LinearLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_repository"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/edt_username" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_layout" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
                 android:paddingBottom="@dimen/recyclerView_bottom_padding"
                 android:layout_marginEnd="8dp"/>
