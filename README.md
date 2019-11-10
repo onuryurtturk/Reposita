@@ -1,5 +1,7 @@
 # Reposita - Sample Githup Api Usage
 
+Type Github username and submit to list selected user's Github repositories. Listing formats can be changed whatever you want to show about the repository. This app is a simple demonstration. Github API serving more fields than used in this app. 
+
 ![alt text](https://github.com/onuryurtturk/Reposita/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png "Logo")
 
 ### Details
@@ -14,8 +16,10 @@
 
 - [Retrofit](https://github.com/square/retrofit)  : Used for api operations
 - [OkHttp](https://github.com/square/okhttp) : Required for monitoring api calls and creating client
-- [ExpandableLayout](https://github.com/cachapa/ExpandableLayout) : Used in creating expandable and clickable order item views
-
+- [AndroidXCore](https://developer.android.com/jetpack/androidx/releases/core) : Jetpack Core package for common infrastructure code
+- [AndroidXLifeCycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) : Jetpack package, for lifecycle awareness
+- [Room](https://developer.android.com/jetpack/androidx/releases/room) : Jetpack package, to store fav items locally
+- [Picasso](https://square.github.io/picasso/) : for loading user's picture
 
 ### Screenshots
 
