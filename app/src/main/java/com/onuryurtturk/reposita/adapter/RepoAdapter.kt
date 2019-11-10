@@ -9,6 +9,9 @@ import com.onuryurtturk.reposita.viewmodel.RepoViewModel
 
 class RepoAdapter(private val repoListViewModel: RepoViewModel) : RecyclerView.Adapter<RepoViewHolder>() {
 
+    /**
+     * Repo Recyclerview adapter
+     */
     var repoList: List<Repo> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
@@ -23,9 +26,14 @@ class RepoAdapter(private val repoListViewModel: RepoViewModel) : RecyclerView.A
         return holder
     }
     override fun getItemCount() = repoList.size
+
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
         holder.init(repoList[position])
     }
+
+    /**
+     * When observer catch changes on items, this function calls for updating recyclerview
+     */
     fun updateRepoItems(repoList: List<Repo>) {
         this.repoList = repoList
         notifyDataSetChanged()

@@ -1,7 +1,7 @@
 package com.onuryurtturk.reposita.data
 
-import com.onuryurtturk.reposita.dao.FavDao
-import com.onuryurtturk.reposita.dao.FavEntity
+import com.onuryurtturk.reposita.persistence.FavDao
+import com.onuryurtturk.reposita.persistence.FavEntity
 import com.onuryurtturk.reposita.model.Repo
 import com.onuryurtturk.reposita.network.ApiClient
 import retrofit2.Call
@@ -11,6 +11,9 @@ import retrofit2.Response
 
 class RepoRepository(private val favDao: FavDao) {
 
+    /**
+     * Repo View Model Repository
+     */
 
     companion object {
         private var INSTANCE: RepoRepository? = null

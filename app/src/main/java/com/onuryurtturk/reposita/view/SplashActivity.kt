@@ -12,7 +12,9 @@ class SplashActivity : AppCompatActivity() {
         initSplashOperation()
     }
 
-
+    /**
+     * after splash operation completed, navigate to next activity
+     */
     private fun initSplashOperation() {
         val intent = Intent(this, ReposActivity::class.java)
         startActivity(intent)

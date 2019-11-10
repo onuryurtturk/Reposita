@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Repo(
+    /**
+     * Repository data class
+     */
     @field:SerializedName("id") val id: Long,
     @field:SerializedName("name") val name: String,
     @field:SerializedName("full_name") val full_name: String,
@@ -20,6 +23,4 @@ data class Repo(
     @field:SerializedName("forks") val forks: Int,
     @field:SerializedName("open_issues") val open_issues: Int,
     @field:SerializedName("watchers") val watchers: Int,
-    var faved:Boolean)  : Serializable {
-
-}
+    var faved:Boolean)  : Serializable

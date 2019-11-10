@@ -11,7 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.onuryurtturk.reposita.BR
 import com.onuryurtturk.reposita.R
-import com.onuryurtturk.reposita.dao.FavEntity
+import com.onuryurtturk.reposita.persistence.FavEntity
 import com.onuryurtturk.reposita.databinding.ActivityRepositoryDetailBinding
 import com.onuryurtturk.reposita.di.InjectionUtils
 import com.onuryurtturk.reposita.model.Repo
@@ -28,7 +28,9 @@ class RepoDetailActivity : AppCompatActivity() {
     private lateinit var viewModel: RepoViewModel
     private lateinit var repoItem: Repo
 
-
+    /**
+     * Create Detail Activity Intent with selected position parameter
+     */
     companion object {
         fun getStartIntent(context: Context, position: String): Intent {
             return Intent(context, RepoDetailActivity::class.java).putExtra(EXTRA_SELECTED_POSITION, position)
@@ -42,6 +44,9 @@ class RepoDetailActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * Binding and actionbar init
+     */
     private fun initBinding(){
         binding = DataBindingUtil.setContentView(this, R.layout.activity_repository_detail)
         binding.lifecycleOwner = this
@@ -50,10 +55,13 @@ class RepoDetailActivity : AppCompatActivity() {
         repoItem = viewModel.getRepoByIndex(Integer.valueOf(intent.getStringExtra(EXTRA_SELECTED_POSITION)))!!
         binding.setVariable(BR.RepoDetailItem,repoItem)
         binding.executePendingBindings()
-        Picasso.get().load(repoItem!!.owner.avatar_url).into(img_user)
+        Picasso.get().load(repoItem.owner.avatar_url).into(img_user)
         supportActionBar!!.title = repoItem.name
     }
 
+    /**
+     * enable back button functionality
+     */
     private fun setupUI(){
         val actionbar = supportActionBar
         actionbar!!.title = getString(R.string.back)
@@ -66,6 +74,9 @@ class RepoDetailActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Create fav menu
+     */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.activity_detail_menu, menu)
         if(repoItem.faved){
@@ -76,6 +87,9 @@ class RepoDetailActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Handle fav menu click
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         R.id.action_fav -> {
             doFavOp(item)
@@ -84,6 +98,10 @@ class RepoDetailActivity : AppCompatActivity() {
         else -> super.onOptionsItemSelected(item)
     }
 
+    /**
+     * if repo not added to favlist set icon to "ic_unfaved"
+     * else set to "ic_faved"
+     */
     fun doFavOp(menuItem: MenuItem){
         if(!repoItem.faved){
             repoItem.faved = true

@@ -25,7 +25,9 @@ class ReposActivity : AppCompatActivity() {
     private lateinit var dataBinding: ActivityRepositoriesBinding
     private lateinit var recyclerAdapter: RepoAdapter
 
-
+    /**
+     * When come back from detail activity, check for fav/unfav repositories
+     */
     override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent?) {
         if (requestCode == REQUEST_CODE) {
             dataBinding.viewModel!!.checkForStar()
@@ -48,6 +50,9 @@ class ReposActivity : AppCompatActivity() {
         initAdapter()
     }
 
+    /**
+     * init adapter and set to recyclerview
+     */
     private fun initAdapter() {
         val viewModel = dataBinding.viewModel
         if (viewModel != null) {
@@ -60,6 +65,9 @@ class ReposActivity : AppCompatActivity() {
         setupObservers()
     }
 
+    /**
+     * setup observers for object changes
+     */
     private fun setupObservers() {
         dataBinding.viewModel?.reposLive?.observe(this, Observer {
             recyclerAdapter.updateRepoItems(it)
@@ -74,9 +82,7 @@ class ReposActivity : AppCompatActivity() {
                 val inputManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 inputManager.hideSoftInputFromWindow(currentFocus?.windowToken, InputMethodManager.SHOW_FORCED)
             }
-
         })
-
 
     }
 
